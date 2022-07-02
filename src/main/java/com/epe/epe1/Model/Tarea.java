@@ -54,9 +54,5 @@ public class Tarea {
     public void setFoto(String foto) {
         this.foto = foto;
     }
-
-    
-    
-    
-    
+ 
 }

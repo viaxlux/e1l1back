@@ -15,25 +15,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 @RestController
+@CrossOrigin(origins={"*"})
+
 public class logincontroller {
    
     @Autowired
     private logindao UserDao;
     
     
-    @GetMapping("/api/user/{id}")
-    @ResponseBody
-    public user usuario(@PathVariable Integer id){
-        return(UserDao.findById(id).get());
-    }
-    
-    @GetMapping("/api/user/username")
+    @GetMapping("/api/user/perfil")
     @ResponseBody
     public user usuario(){
-        return(UserDao.findByUsername("leo"));
+        return(UserDao.findById(1).get());
     }
+                 
+   
     
     @PostMapping("/api/user/login")
     @ResponseBody
@@ -55,5 +53,6 @@ public class logincontroller {
     public void deleteUser(@PathVariable Integer id){
         UserDao.deleteById(id);
     }
+    
 
 }

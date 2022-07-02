@@ -58,5 +58,4 @@ public class TareaController {
     {
         tareaService.delete(id);
     }
-    
 }
